@@ -1,0 +1,33 @@
+/*.one{background: url('../fonts/an.png'); background-size: 100% 100%;}
+.two{background: url('../fonts/conseil.png'); background-size: 100% 100%;}
+.three{background: url('../fonts/tribunal.png'); background-size: 100% 100%;}*/
+
+.carousel img{height: 800px; width: 400px;}
+.title, .menuItem{text-align: center;}
+.menuItem{line-height: 50px;}
+.title{font-size: 30px;}
+header{color: #fff;/* margin-bottom: 0px !important;*/}
+
+.ssearch{margin: 0px;}
+.catCaption{text-align: center; font-size: 18px;}
+/*.catItem:hover{background: #ccc; transition-duration: .2s;}*/
+.areaTitle{font-size: 25px;}
+.article{background: #ccc;  border-radius: 5px; cursor: pointer; margin-bottom: 10px;}
+.article .titlearticle{font-size: 20px; text-align: center;}
+.article .titlearticle2{font-size: 18px; text-align: center;}
+.article .datea{background: rgb(0, 79, 255); font-size: 17px; padding: 3px; color: white;}
+.titleA{cursor: pointer;}
+.aPage{padding: 10px; background: #ccc; border-radius: 5px; margin-left: 5px; cursor: pointer;}
+.next, .prev{padding: 10px; color: rgb(201, 0, 0);  cursor: pointer;}
+.catCaption font{padding: 4px 8px 4px 8px; border-radius: 8px;}
+.param{display: none;}
+
+.diapo ul{list-style-type: none;}
+.diapo ul li{position: absolute; margin-top: -15px;}
+.slideZone{height: 144px;}
+.contact{line-height: 90px;}
+
+.ttt:hover{margin-left: 5px; text-decoration: underline; transition-duration: .14s;}
+.p{text-align: center;}
+
+/*.carousel{max-height: 100%; max-width: 100%;}*/

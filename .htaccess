@@ -1,0 +1,7 @@
+RewriteEngine on
+
+#RewriteRule ./[0-9a-zA-Z_-!@#$%^&*()é"'èçà]+ ./
+
+RewriteRule ^statisti([a-z])$ statistiques/index.php
+
+RewriteRule new[/]$ new/index.php

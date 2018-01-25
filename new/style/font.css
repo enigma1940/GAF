@@ -1,0 +1,120 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'ag_condensed';
+    src: url('../fonts/akzidenzG/condensed.eot');
+    src: url('../fonts/akzidenzG/condensed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/akzidenzG/condensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ag_bold_condensed';
+    src: url('../fonts/akzidenzG/bold_condensed.eot');
+    src: url('../fonts/akzidenzG/bold_condensed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/akzidenzG/bold_condensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ag_bold_condensed_italic';
+    src: url('../fonts/akzidenzG/bold_condensed_italic.eot');
+    src: url('../fonts/akzidenzG/bold_condensed_italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/akzidenzG/bold_condensed_italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ag_condensed_italic';
+    src: url('../fonts/akzidenzG/condensed_italic.eot'); 
+    src: url('../fonts/akzidenzG/condensed_italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/akzidenzG/condensed_italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ag_light_condensed';
+    src: url('../fonts/akzidenzG/light_condensed.eot');
+    src: url('../fonts/akzidenzG/light_condensed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/akzidenzG/light_condensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ag_light_condensed_italic';
+    src: url('../fonts/akzidenzG/light_condensed_italic.eot');
+    src: url('../fonts/akzidenzG/light_condensed_italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/akzidenzG/light_condensed_italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Adobe Caslon Pro */
+@font-face {
+    font-family: 'caslonReg';
+    src: url('../fonts/caslonP/ACaslonPro-Regular.eot');
+    src: url('../fonts/caslonP/ACaslonPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/caslonP/ACaslonPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caslonBold';
+    src: url('../fonts/caslonP/ACaslonPro-Bold.eot');
+    src: url('../fonts/caslonP/ACaslonPro-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/caslonP/ACaslonPro-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caslonItalic';
+    src: url('../fonts/caslonP/ACaslonPro-Italic.eot');
+    src: url('../fonts/caslonP/ACaslonPro-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/caslonP/ACaslonPro-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caslonBoldItalic';
+    src: url('../fonts/caslonP/ACaslonPro-BoldItalic.eot');
+    src: url('../fonts/caslonP/ACaslonPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/caslonP/ACaslonPro-BoldItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.police
+{
+    font-family:"ag_condensed";
+}
+
+/* Définition des polices personnalisées */
+@font-face
+{
+    font-family: 'BallparkWeiner';
+    src: url('../fonts/polices/ballpark.eot');
+    src: url('../fonts/polices/ballpark.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/polices/ballpark.woff') format('woff'),
+         url('../fonts/polices/ballpark.ttf') format('truetype'),
+         url('../fonts/polices/ballpark.svg#BallparkWeiner') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Dayrom';
+    src: url('../fonts/polices/dayrom.eot');
+    src: url('../fonts/polices/dayrom.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/polices/dayrom.woff') format('woff'),
+         url('../fonts/polices/dayrom.ttf') format('truetype'),
+         url('../fonts/polices/dayrom.svg#Dayrom') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font {
+
+  font-family: 'ballparkWeiner';
+}

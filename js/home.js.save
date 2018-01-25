@@ -1,0 +1,124 @@
+$('#textComplete').css('display', 'none');
+$('.btnHome').click(function(){document.location.href="./";});
+$('.catItem').click(function(){$('.catItem').css('background', 'none');$(this).css('background', '#ccc');});
+$('.title').css('line-height', $('.logo').css('height'));
+
+$('.paginator').on('click', '.aPage', function(){
+  $('.curPage').attr('value', $(this).html());
+  if(parseFloat($(this).html())>1){
+    $('.aPage').css({'background':'#ccc', 'color':'black'});
+    $.ajax({
+      type: "POST",
+      url: 'php/page.php',
+      data: '&opt=mod&cat=cr-cm&page='+$(this).html(),
+      beforeSend: function(){$('.articles').html('<img src="fonts/loader.gif" />');},
+      success: function(data){$('.articles').html(data);}
+    });
+
+    if(parseFloat($(this).html())<($('.maxPage').val()-1) && parseFloat($(this).html())!=1){
+      var n = $('.maxPage')-parseFloat($(this).html());
+      switch(n){
+        case 2:
+          break;
+        case 3:
+          break;
+        default:
+            $('.paginator').html('<center><font class="prev waves-effect waves-red"><i class="material-icons">chevron_left</i></font><font class="aPage">1</font><font class="aPage" style="background:rgb(150, 0, 0); color:white;">'+(parseFloat($(this).html()))+'</font><font class="aPage">'+(parseFloat($(this).html())+1)+'</font><font class="aPage">'+(parseFloat($(this).html())+2)+'</font>...<font class="aPage">'+$('.maxPage').val()+'</font><font class="next waves-effect waves-red"><i class="material-icons">chevron_right</i></font></center>');
+          break;
+      }
+    }
+  }else{
+    $('.aPage').css({'background':'#ccc', 'color':'black'});
+    $.ajax({
+      type: "POST",
+      url: 'php/page.php',
+      data: '&opt=mod&cat=cr-cm&page=1',
+      beforeSend: function(){$('.articles').html('<img src="fonts/loader.gif" />');},
+      success: function(data){$('.articles').html(data);}
+    });
+  }
+  $(this).css({'background':'rgb(150, 0, 0)', 'color':'#fff'});
+});
+$('.paginator').on('click', '.prev', function(){
+  if(parseFloat($('.curPage').val())>1){
+    $('.curPage').attr('value', parseFloat($('.curPage').val())-1);
+    $.ajax({
+      type: "POST",
+      url: 'php/page.php',
+      data: '&opt=mod&cat=cr-cm&page='+$('.curPage').val(),
+      beforeSend: function(){$('.articles').html('<img src="fonts/loader.gif" />');},
+      success: function(data){$('.articles').html(data);}
+    });
+
+    if(parseFloat($('.curPage').val())<($('.maxPage').val()) && parseFloat($('.curPage').val())!=1){
+      var n = $('.maxPage')-parseFloat($(this).html());
+      switch(n){
+        case 2:
+          break;
+        case 3:
+          break;
+        default:
+            $('.paginator').html('<center><font class="prev waves-effect waves-red"><i class="material-icons">chevron_left</i></font><font class="aPage">1</font>..<font class="aPage" style="background:rgb(150, 0, 0); color:white;">'+(parseFloat($('.curPage').val()))+'</font><font class="aPage">'+(parseFloat($('.curPage').val())+1)+'</font><font class="aPage">'+(parseFloat($('.curPage').val())+2)+'</font>...<font class="aPage">'+$('.maxPage').val()+'</font><font class="next waves-effect waves-red"><i class="material-icons">chevron_right</i></font></center>');
+          break;
+      }
+    }
+  }
+});
+$('.paginator').on('click', '.next', function(){
+  if(parseFloat($('.curPage').val())<parseFloat($('.maxPage').val())){
+    $('.curPage').attr('value', parseFloat($('.curPage').val())+1);
+    $.ajax({
+      type: "POST",
+      url: 'php/page.php',
+      data: '&opt=mod&cat=cr-cm&page='+$('.curPage').val(),
+      beforeSend: function(){$('.articles').html('<img src="fonts/loader.gif" />');},
+      success: function(data){$('.articles').html(data);}
+    });
+
+    if(parseFloat($('.curPage').val())<($('.maxPage').val()-1) && parseFloat($('.curPage').val())!=1){
+      var n = $('.maxPage')-parseFloat($(this).html());
+      switch(n){
+        case 2:
+          break;
+        case 3:
+          break;
+        default:
+            $('.paginator').html('<center><font class="prev waves-effect waves-red"><i class="material-icons">chevron_left</i></font><font class="aPage">1</font>..<font class="aPage" style="background:rgb(150, 0, 0); color:white;">'+(parseFloat($('.curPage').val()))+'</font><font class="aPage">'+(parseFloat($('.curPage').val())+1)+'</font><font class="aPage">'+(parseFloat($('.curPage').val())+2)+'</font>...<font class="aPage">'+$('.maxPage').val()+'</font><font class="next waves-effect waves-red"><i class="material-icons">chevron_right</i></font></center>');
+          break;
+      }
+    }
+  }
+});
+
+$('.article').click(function(){
+  $('.catArea').css('display', 'none');
+  $('.articles').css('display', 'none');
+  $('.paginator').css('display', 'none');
+  $.ajax({
+    type: "POST",
+    url: 'php/openArticle.php',
+    data: '&opt=openArticle&art='+$(this).children('.onearticle').val(),
+    beforeSend: function(){/*$('.general').html('<img src="fonts/loader.gif" />');*/  $('.lastArticle').html('<img src="fonts/loader.gif" />'); },
+    success: function(data){ $('.lastArticle').html(data); }
+  });
+});
+
+$('.searchForm').submit(function(e){
+  e.preventDefault();
+  if($('.searchText').val()){
+    $('.searchResult').css('display','none');
+    $('.bigArea').css('display', 'none');
+    $('.searchResult').html('<img src="fonts/loader.gif" />');
+    $('.searchResult').toggle('drop');
+    $.post(
+      'php/searchResult.php',
+      {search: $('.searchText').val()},
+      function(data){$('.searchResult').html(data);}
+    );
+  }
+});
+
+$('.titleA').click(function(){
+  if($($(this).attr('data')).css('display')=='none') $($(this).attr('data')).show('slow');
+  else $($(this).attr('data')).hide('slow');
+});
